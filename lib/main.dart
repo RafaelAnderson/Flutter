@@ -1,19 +1,10 @@
 // imporM
 import 'package:flutter/material.dart';
+
+// Importaciones de paquetes
+//import './src/app.dart';
+import 'package:flutter_application_1/src/app.dart';
+
 void main() {
-  runApp(new MyApp());
-}
-
-// Widget
-class MyApp extends StatelessWidget {
-
-  // Sobreescribir la función build
-  @override
-  Widget build(context) {
-    return MaterialApp(
-      home: Center(
-        child: Text('Hola mundo'),
-        ) 
-    );
-  }
+  runApp(MyApp());
 }
