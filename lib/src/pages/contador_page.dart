@@ -40,12 +40,22 @@ class _ContadorPageState extends State<ContadorPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         SizedBox(width: 30.0,),
-        FloatingActionButton(child: Icon(Icons.exposure_zero), onPressed: null),
+        FloatingActionButton(child: Icon(Icons.exposure_zero), onPressed: _reset),
         Expanded(child: SizedBox()),
-        FloatingActionButton(child: Icon(Icons.remove), onPressed: null),
-        Expanded(child: SizedBox()),
-        FloatingActionButton(child: Icon(Icons.add), onPressed: null)
+        FloatingActionButton(child: Icon(Icons.remove), onPressed: _disminuir),
+        FloatingActionButton(child: Icon(Icons.add), onPressed: _aumentar)
       ], 
     );
+  }
+
+  void _reset() {
+    setState(() => _contador = 0);
+  }
+
+  void _disminuir() {
+    setState(() => _contador--);
+  }
+  void _aumentar() {
+    setState(() => _contador++);
   }
 }
