@@ -12,7 +12,7 @@ class _ContadorPageState extends State<ContadorPage> {
   final estiloTexto = new TextStyle(fontSize: 25.0);
 
   int _contador = 0;
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,18 +31,21 @@ class _ContadorPageState extends State<ContadorPage> {
           ],
         )
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          // print('Hola mundo');
-          _contador++;
+      floatingActionButton: _crearBotones()
+    );
+  }
 
-          setState(() {
-            
-          });
-        },
-      ),
+  Widget _crearBotones() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        SizedBox(width: 30.0,),
+        FloatingActionButton(child: Icon(Icons.exposure_zero), onPressed: null),
+        Expanded(child: SizedBox()),
+        FloatingActionButton(child: Icon(Icons.remove), onPressed: null),
+        Expanded(child: SizedBox()),
+        FloatingActionButton(child: Icon(Icons.add), onPressed: null)
+      ], 
     );
   }
 }
